@@ -7,9 +7,9 @@
 
 #include "../include/my_printf.h"
 
-int my_s_caller(va_list list)
+int my_s_caller(va_list *list)
 {
-    char *str = va_arg(list, char *);
+    char *str = va_arg(*list, char *);
 
     return my_s(str);
 }

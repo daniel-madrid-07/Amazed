@@ -20,9 +20,9 @@ int my_x_p(unsigned long nb)
     return count;
 }
 
-int my_p_caller(va_list list)
+int my_p_caller(va_list *list)
 {
-    void *nb = va_arg(list, void *);
+    void *nb = va_arg(*list, void *);
 
     return my_p(nb);
 }

@@ -105,12 +105,12 @@ int is_nan(double nb)
         return 0;
 }
 
-int my_e_caller(va_list list)
+int my_e_caller(va_list *list)
 {
-    double nb = va_arg(list, double);
+    double nb = va_arg(*list, double);
 
     if (is_nan(nb) == 1)
-        nb = va_arg(list, int);
+        nb = va_arg(*list, int);
     return my_e(nb);
 }
 

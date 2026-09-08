@@ -7,9 +7,9 @@
 
 #include "../include/my_printf.h"
 
-int my_u_caller(va_list list)
+int my_u_caller(va_list *list)
 {
-    unsigned int n = va_arg(list, unsigned int);
+    unsigned int n = va_arg(*list, unsigned int);
 
     return my_u(n);
 }

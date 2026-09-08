@@ -7,9 +7,9 @@
 
 #include "../include/my_printf.h"
 
-int my_space_caller(va_list list)
+int my_space_caller(va_list *list)
 {
-    int nb = va_arg(list, int);
+    int nb = va_arg(*list, int);
 
     return my_space(nb);
 }

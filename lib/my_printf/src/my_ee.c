@@ -97,9 +97,9 @@ char *format_above_ten_cap(double nb, char *dest, int *exponent)
     return dest;
 }
 
-int my_ee_caller(va_list list)
+int my_ee_caller(va_list *list)
 {
-    double nb = va_arg(list, double);
+    double nb = va_arg(*list, double);
 
     return my_ee(nb);
 }

@@ -7,9 +7,9 @@
 
 #include "../include/my_printf.h"
 
-int my_f_caller(va_list list)
+int my_f_caller(va_list *list)
 {
-    double nb = va_arg(list, double);
+    double nb = va_arg(*list, double);
 
     return my_f(nb);
 }

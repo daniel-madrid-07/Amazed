@@ -40,7 +40,7 @@ int flag_0(const char *s, int nb)
         return -1000;
 }
 
-int disp_stdarg(const char *s, va_list list)
+int disp_stdarg(const char *s, va_list *list)
 {
     for (int i = 0; i < 15; i++) {
         if (specifiers[i].option == s[0])
@@ -49,14 +49,14 @@ int disp_stdarg(const char *s, va_list list)
     if (s[0] == '%')
         return my_c('%');
     if (s[0] == '+') {
-        my_plus(va_arg(list, int));
+        my_plus(va_arg(*list, int));
         return 1;
     }
     if (s[0] == ' ') {
-        my_space(va_arg(list, int));
+        my_space(va_arg(*list, int));
         return 1;
     }
-    return flag_0(s, va_arg(list, int));
+    return flag_0(s, va_arg(*list, int));
 }
 
 void handle_format_skip(const char *format, int *i)
@@ -75,7 +75,7 @@ int my_printf(const char *format, ...)
     va_start(list, format);
     for (int i = 0; format[i] != '\0'; i++) {
         if (format[i] == '%') {
-            count += disp_stdarg(format + i + 1, list);
+            count += disp_stdarg(format + i + 1, &list);
             i++;
             handle_format_skip(format, &i);
         } else {

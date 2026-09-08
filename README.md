@@ -4,6 +4,8 @@
 
 **A pathfinding and multi-robot coordination algorithm for maze solving.**
 
+![Amazed coordinating 3 robots across parallel paths](docs/screenshots/output.png)
+
 </div>
 
 ---

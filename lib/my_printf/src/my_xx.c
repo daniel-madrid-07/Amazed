@@ -7,9 +7,9 @@
 
 #include "../include/my_printf.h"
 
-int my_xx_caller(va_list list)
+int my_xx_caller(va_list *list)
 {
-    int nb = va_arg(list, int);
+    int nb = va_arg(*list, int);
 
     return my_xx(nb);
 }
@@ -27,9 +27,9 @@ int my_xx(int nb)
     return count;
 }
 
-char *my_xx_char_caller(va_list list)
+char *my_xx_char_caller(va_list *list)
 {
-    int nb = va_arg(list, int);
+    int nb = va_arg(*list, int);
 
     return my_xx_char(nb);
 }
